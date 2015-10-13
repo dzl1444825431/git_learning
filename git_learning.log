@@ -1,3 +1,5 @@
+---------------------------------------------- 2015-10-13 16:13 ----------------------------------------------
+
 Microsoft Windows [版本 6.1.7601]
 版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
 
@@ -1603,3 +1605,312 @@ D:\work_git>git --version
 git version 1.8.4.msysgit.0
 
 D:\work_git>
+
+
+
+
+
+
+---------------------------------------------- 2015-10-13 21:00 ----------------------------------------------
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,598,666,240 可用字节
+
+D:\work_git2>dir /b .git\index
+index
+
+D:\work_git2>dir /a .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,598,322,176 可用字节
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,598,322,176 可用字节
+
+D:\work_git2>git status -s
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,598,322,176 可用字节
+
+D:\work_git2>touch a.txt
+'touch' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git2>copy a.txt ,,
+文件无法自身复制。
+已复制         0 个文件。
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,596,257,792 可用字节
+
+D:\work_git2>copy /B  a.txt ,,
+文件无法自身复制。
+已复制         0 个文件。
+
+D:\work_git2>copy  a.txt +,,
+已复制         1 个文件。
+
+D:\work_git2>dir .git/index
+无效开关 - "index"。
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  22:56               137 index
+               1 个文件            137 字节
+               0 个目录 50,595,074,048 可用字节
+
+D:\work_git2>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2 的目录
+
+2015/10/13  22:56    <DIR>          .
+2015/10/13  22:56    <DIR>          ..
+2015/10/13  23:05                22 a.txt
+               1 个文件             22 字节
+               2 个目录 50,595,074,048 可用字节
+
+D:\work_git2>git status -s
+
+D:\work_git2>git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  23:06               137 index
+               1 个文件            137 字节
+               0 个目录 50,595,074,048 可用字节
+
+D:\work_git2>dir .git\index
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2\.git 的目录
+
+2015/10/13  23:06               137 index
+               1 个文件            137 字节
+               0 个目录 50,595,074,048 可用字节
+
+D:\work_git2>git ls-tree -l HEAD
+100644 blob 9f8b84b3f00f663cafe4b3a6e4b521ac946bc71a      21    a.txt
+
+D:\work_git2>git status -s
+
+D:\work_git2>git diff
+
+D:\work_git2>git clean -fd
+
+D:\work_git2>git checkout .
+
+D:\work_git2>mkdir -p a/b/c
+命令语法不正确。
+
+D:\work_git2>mkdir  a/b/c
+命令语法不正确。
+
+D:\work_git2>mkdir  a\b\c
+
+D:\work_git2>echo "Hello." >a\b\c\hello.txt
+
+D:\work_git2>git add .
+
+D:\work_git2>git status -s
+A  a/b/c/hello.txt
+
+D:\work_git2>echo "Bye Bye." >>a\b\c\hello.txt
+
+D:\work_git2>git status -s
+AM a/b/c/hello.txt
+
+D:\work_git2>git reset HEAD
+
+D:\work_git2>git status -s
+?? a/
+
+D:\work_git2>echo "Bye Bye." >>a.txt
+
+D:\work_git2>git status -s
+ M a.txt
+?? a/
+
+D:\work_git2>echo "Bye Bye." >>a\b\c\hello.txt
+
+D:\work_git2>git status -s
+ M a.txt
+?? a/
+
+D:\work_git2>git add .
+
+D:\work_git2>git status -s
+M  a.txt
+A  a/b/c/hello.txt
+
+D:\work_git2>echo "Bye Bye2." >>a\b\c\hello.txt
+
+D:\work_git2>git status -s
+M  a.txt
+AM a/b/c/hello.txt
+
+D:\work_git2>git ls-files -s
+100644 29a6fb6160b56f8e8fea1f7e991d2f3d192a7c8b 0       a.txt
+100644 405672900b458c9a002003351dfd95f296287fc7 0       a/b/c/hello.txt
+
+D:\work_git2>git ls-files
+a.txt
+a/b/c/hello.txt
+
+D:\work_git2>git ls-files HEAD
+
+D:\work_git2>git ls-tree -l HEAD
+100644 blob 9f8b84b3f00f663cafe4b3a6e4b521ac946bc71a      21    a.txt
+
+D:\work_git2>git write-tree
+2ebdbb3252c16793a47bc486925dc6d093475537
+
+D:\work_git2>git ls-tree -l 2ebdbb
+100644 blob 29a6fb6160b56f8e8fea1f7e991d2f3d192a7c8b      33    a.txt
+040000 tree c589ec423409b46d1fe1738353c30351a7882d7c       -    a
+
+D:\work_git2>git write-tree | xargs git ls-tree -l -r -t
+'xargs' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git2>git ls-tree -l -r -t
+usage: git ls-tree [<options>] <tree-ish> [<path>...]
+
+    -d                    only show trees
+    -r                    recurse into subtrees
+    -t                    show trees when recursing
+    -z                    terminate entries with NUL byte
+    -l, --long            include object size
+    --name-only           list only filenames
+    --name-status         list only filenames
+    --full-name           use full path names
+    --full-tree           list entire tree; not just current directory (implies --full-name)
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+
+
+D:\work_git2>git ls-tree -l -r -t 2ebdbb
+100644 blob 29a6fb6160b56f8e8fea1f7e991d2f3d192a7c8b      33    a.txt
+040000 tree c589ec423409b46d1fe1738353c30351a7882d7c       -    a
+040000 tree c35c100b60799c61ffcf4d903795a3bf7728e5bc       -    a/b
+040000 tree aa600655adc6cca55ac913d54c602a0374a0c397       -    a/b/c
+100644 blob 405672900b458c9a002003351dfd95f296287fc7      34    a/b/c/hello.txt
+
+D:\work_git2>git diff
+diff --git a/a/b/c/hello.txt b/a/b/c/hello.txt
+index 4056729..a7a5e91 100644
+--- a/a/b/c/hello.txt
++++ b/a/b/c/hello.txt
+@@ -1,3 +1,4 @@
+ "Hello."
+ "Bye Bye."
+ "Bye Bye."
++"Bye Bye2."
+
+D:\work_git2>git diff --cached
+diff --git a/a.txt b/a.txt
+index 9f8b84b..29a6fb6 100644
+--- a/a.txt
++++ b/a.txt
+@@ -1 +1,2 @@
+ "Nice to meet you."
++"Bye Bye."
+diff --git a/a/b/c/hello.txt b/a/b/c/hello.txt
+new file mode 100644
+index 0000000..4056729
+--- /dev/null
++++ b/a/b/c/hello.txt
+@@ -0,0 +1,3 @@
++"Hello."
++"Bye Bye."
++"Bye Bye."
+
+D:\work_git2>git diff HEAD
+diff --git a/a.txt b/a.txt
+index 9f8b84b..29a6fb6 100644
+--- a/a.txt
++++ b/a.txt
+@@ -1 +1,2 @@
+ "Nice to meet you."
++"Bye Bye."
+diff --git a/a/b/c/hello.txt b/a/b/c/hello.txt
+new file mode 100644
+index 0000000..a7a5e91
+--- /dev/null
++++ b/a/b/c/hello.txt
+@@ -0,0 +1,4 @@
++"Hello."
++"Bye Bye."
++"Bye Bye."
++"Bye Bye2."
+
+D:\work_git2>git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   a.txt
+        new file:   a/b/c/hello.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   a/b/c/hello.txt
+
+
+D:\work_git2>git stash
+Saved working directory and index state WIP on master: 2f69915 which version checked in?
+HEAD is now at 2f69915 which version checked in?
+
+D:\work_git2>git status
+On branch master
+Your branch is ahead of 'origin/master' by 2 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+D:\work_git2>
+
+
