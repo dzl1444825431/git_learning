@@ -1914,3 +1914,2147 @@ nothing to commit, working directory clean
 D:\work_git2>
 
 
+---------------------------------------------- 2015-10-14 08:33 ----------------------------------------------
+
+
+D:\work_git_learning\git_learning>git log --pretty=row
+fatal: invalid --pretty format: row
+
+D:\work_git_learning\git_learning>git log --pretty=raw
+WARNING: terminal is not fully functional
+-  (press RETURN)
+D:\work_git_learning\git_learning>cd ../../work_git
+
+D:\work_git>git status -s
+D  b.txt
+?? b.txt
+?? 中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git add .
+
+D:\work_git>git status -s
+A  中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git commit -m"15-10-13"
+[master ccf86cc] 15-10-13
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git status -s
+
+D:\work_git>git log --pretty=oneline
+WARNING: terminal is not fully functional
+-  (press RETURN)
+D:\work_git>git log --pretty=oneline
+WARNING: terminal is not fully functional
+ccf86cc09ce7029d6663345fce5489ad437a57c4 15-10-13
+e24742a9e923c7e2a41aab7e7f0281b63b89e95f add b.txt
+6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b add a.txt 1 git commit --amend 2
+
+D:\work_git>git log --pretty=raw
+WARNING: terminal is not fully functional
+commit ccf86cc09ce7029d6663345fce5489ad437a57c4
+tree 70ed8c6dd0202971c85fef0b1d3486f18685a9a3
+parent e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+author dzl <1444825431@qq.com> 1444784818 +0800
+committer dzl <1444825431@qq.com> 1444784818 +0800
+
+    15-10-13
+
+commit e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+tree 2bdf04adb23d2b40b6085efb230856e5e2a775b7
+parent 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+author dzl <1444825431@qq.com> 1444727659 +0800
+committer dzl <1444825431@qq.com> 1444727659 +0800
+
+    add b.txt
+
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+tree 65a457425a679cbe9adf0d2741785d3ceabb44a7
+author dzl <1444825431@qq.com> 1444727406 +0800
+committer dzl <1444825431@qq.com> 1444727438 +0800
+
+    add a.txt 1
+    git commit --amend 2
+
+D:\work_git>git log --pretty=raw
+WARNING: terminal is not fully functional
+commit ccf86cc09ce7029d6663345fce5489ad437a57c4
+tree 70ed8c6dd0202971c85fef0b1d3486f18685a9a3
+parent e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+author dzl <1444825431@qq.com> 1444784818 +0800
+committer dzl <1444825431@qq.com> 1444784818 +0800
+
+    15-10-13
+
+commit e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+tree 2bdf04adb23d2b40b6085efb230856e5e2a775b7
+parent 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+author dzl <1444825431@qq.com> 1444727659 +0800
+committer dzl <1444825431@qq.com> 1444727659 +0800
+
+    add b.txt
+
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+tree 65a457425a679cbe9adf0d2741785d3ceabb44a7
+author dzl <1444825431@qq.com> 1444727406 +0800
+committer dzl <1444825431@qq.com> 1444727438 +0800
+
+    add a.txt 1
+    git commit --amend 2
+
+D:\work_git>git log -l --pretty=row
+WARNING: terminal is not fully functional
+commit ccf86cc09ce7029d6663345fce5489ad437a57c4
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 09:06:58 2015 +0800
+
+    15-10-13
+
+commit e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:14:19 2015 +0800
+
+    add b.txt
+
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:10:06 2015 +0800
+
+    add a.txt 1
+    git commit --amend 2
+
+D:\work_git>git cat-file -tccf86c
+error: unknown switch `c'
+usage: git cat-file (-t|-s|-e|-p|<type>|--textconv) <object>
+   or: git cat-file (--batch|--batch-check) < <list_of_objects>
+
+<type> can be one of: blob, tree, commit, tag
+    -t                    show object type
+    -s                    show object size
+    -e                    exit with zero when there's no error
+    -p                    pretty-print object's content
+    --textconv            for blob objects, run textconv on object's content
+    --batch[=<format>]    show info and content of objects fed from the standard input
+    --batch-check[=<format>]
+                          show info about objects fed from the standard input
+
+
+D:\work_git>git cat-file -t ccf86c
+commit
+
+D:\work_git>git cat-file -t e24742
+commit
+
+D:\work_git>git cat-file -t 70ed8c
+tree
+
+D:\work_git>git cat-file -t e24742
+commit
+
+D:\work_git>git cat-file -p ccf86c
+tree 70ed8c6dd0202971c85fef0b1d3486f18685a9a3
+parent e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+author dzl <1444825431@qq.com> 1444784818 +0800
+committer dzl <1444825431@qq.com> 1444784818 +0800
+
+15-10-13
+
+D:\work_git>git cat-file -p 70ed8c
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    a.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    b.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git cat-file -t e69de29
+blob
+
+D:\work_git>git cat-file -p e69de29
+
+D:\work_git>git cat-file -p e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+
+D:\work_git>echo "Bye Bye." >>a.txt
+
+D:\work_git>git status -s
+ M a.txt
+
+D:\work_git>git add .
+
+D:\work_git>git status -s
+M  a.txt
+
+D:\work_git>git commit -m "append a.txt"
+[master 2e4cfa6] append a.txt
+ 1 file changed, 1 insertion(+)
+
+D:\work_git>git status -s
+
+D:\work_git>git log --pretty=raw
+WARNING: terminal is not fully functional
+commit 2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+tree 26d84bc1dfb4fb59d37f0768159e089505fd653f
+parent ccf86cc09ce7029d6663345fce5489ad437a57c4
+author dzl <1444825431@qq.com> 1444785705 +0800
+committer dzl <1444825431@qq.com> 1444785705 +0800
+
+    append a.txt
+
+commit ccf86cc09ce7029d6663345fce5489ad437a57c4
+tree 70ed8c6dd0202971c85fef0b1d3486f18685a9a3
+parent e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+author dzl <1444825431@qq.com> 1444784818 +0800
+committer dzl <1444825431@qq.com> 1444784818 +0800
+
+    15-10-13
+
+commit e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+tree 2bdf04adb23d2b40b6085efb230856e5e2a775b7
+parent 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+author dzl <1444825431@qq.com> 1444727659 +0800
+committer dzl <1444825431@qq.com> 1444727659 +0800
+
+    add b.txt
+
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+tree 65a457425a679cbe9adf0d2741785d3ceabb44a7
+author dzl <1444825431@qq.com> 1444727406 +0800
+committer dzl <1444825431@qq.com> 1444727438 +0800
+
+    add a.txt 1
+    git commit --amend 2
+(END)
+D:\work_git>git cat-file -p 26d84bc1dfb4fb59d37f0768159e089505fd653f
+100644 blob 1cd7683a72f7187f97dfd8576098753f6ed9c59d    a.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    b.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git cat-file -p  2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+tree 26d84bc1dfb4fb59d37f0768159e089505fd653f
+parent ccf86cc09ce7029d6663345fce5489ad437a57c4
+author dzl <1444825431@qq.com> 1444785705 +0800
+committer dzl <1444825431@qq.com> 1444785705 +0800
+
+append a.txt
+
+D:\work_git>git cat-file -p 26d84b
+100644 blob 1cd7683a72f7187f97dfd8576098753f6ed9c59d    a.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    b.txt
+100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git cat-file -p 1cd768
+"Bye Bye."
+
+D:\work_git>git cat-file -p ccf86c
+tree 70ed8c6dd0202971c85fef0b1d3486f18685a9a3
+parent e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+author dzl <1444825431@qq.com> 1444784818 +0800
+committer dzl <1444825431@qq.com> 1444784818 +0800
+
+15-10-13
+
+D:\work_git>git cat-file -p 1cd768
+"Bye Bye."
+
+D:\work_git>for id in 1cd768
+此时不应有 id。
+
+D:\work_git>for id in 1cd768;
+此时不应有 id。
+
+D:\work_git>for id in 1cd768; do ls .git\objects\${id:0:2}\${id:2};done
+此时不应有 id。
+
+D:\work_git>for in 1cd768; do ls .git\objects\${id:0:2}\${id:2};done
+此时不应有 in。
+
+D:\work_git>for  1cd768; do ls .git\objects\${id:0:2}\${id:2};done
+此时不应有 1cd768。
+
+D:\work_git>for --help
+此时不应有 --help。
+
+D:\work_git>git help for
+Launching default browser to display HTML ...
+fatal: failed to launch browser for D:\Program Files (x86)\Git/doc/git/html//gitfor.html
+
+D:\work_git>git help gitfor
+Launching default browser to display HTML ...
+fatal: failed to launch browser for D:\Program Files (x86)\Git/doc/git/html//gitfor.html
+
+D:\work_git>git
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+D:\work_git>git --help
+usage: git [--version] [--help] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p|--paginate|--no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+The most commonly used git commands are:
+   add        Add file contents to the index
+   bisect     Find by binary search the change that introduced a bug
+   branch     List, create, or delete branches
+   checkout   Checkout a branch or paths to the working tree
+   clone      Clone a repository into a new directory
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   fetch      Download objects and refs from another repository
+   grep       Print lines matching a pattern
+   init       Create an empty Git repository or reinitialize an existing one
+   log        Show commit logs
+   merge      Join two or more development histories together
+   mv         Move or rename a file, a directory, or a symlink
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+   rebase     Forward-port local commits to the updated upstream head
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+   show       Show various types of objects
+   status     Show the working tree status
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+'git help -a' and 'git help -g' lists available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+D:\work_git>git status -s -b
+## master
+
+D:\work_git>git branch
+* master
+
+D:\work_git>git log -1 HEAD
+WARNING: terminal is not fully functional
+commit 2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 09:21:45 2015 +0800
+
+    append a.txt
+
+D:\work_git>git log -1 master
+WARNING: terminal is not fully functional
+commit 2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 09:21:45 2015 +0800
+
+    append a.txt
+
+D:\work_git>git log -1 refs\heads\master
+fatal: ambiguous argument 'refs\heads\master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git log -1 .\refs\heads\master
+fatal: ambiguous argument '.\refs\heads\master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git log -1 .git\refs\heads\master
+WARNING: terminal is not fully functional
+-  (press RETURN)
+D:\work_git>git log -1 .git\ref\heads\master
+fatal: ambiguous argument '.git\ref\heads\master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>
+
+
+D:\work_git>git rev-parse master
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+
+D:\work_git>git rev-parse HEAD
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+
+D:\work_git>printf Git |sha1sum
+5819778898df55e3a762f0c5728b457970d72cae *-
+
+D:\work_git>git cat-file commit HEAD
+tree 26d84bc1dfb4fb59d37f0768159e089505fd653f
+parent ccf86cc09ce7029d6663345fce5489ad437a57c4
+author dzl <1444825431@qq.com> 1444785705 +0800
+committer dzl <1444825431@qq.com> 1444785705 +0800
+
+append a.txt
+
+D:\work_git>git cat-file commit HEAD | wc -c
+207
+
+D:\work_git>git cat-file blob HEAD:a.txt
+"Bye Bye."
+
+D:\work_git>git cat-file blob HEAD:a.txt | wc -c
+13
+
+D:\work_git>git rev-parse HEAD
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+
+D:\work_git>git rev-parse -p 2e4cf
+-p
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+
+D:\work_git>git cat-file -p 2e4cf
+tree 26d84bc1dfb4fb59d37f0768159e089505fd653f
+parent ccf86cc09ce7029d6663345fce5489ad437a57c4
+author dzl <1444825431@qq.com> 1444785705 +0800
+committer dzl <1444825431@qq.com> 1444785705 +0800
+
+append a.txt
+
+D:\work_git>git cat-file -p 2e4cf^
+More?
+More? e
+fatal: Not a valid object name 2e4cf
+e
+
+D:\work_git>git cat-file -p 2e4cf^
+More? 1
+fatal: Not a valid object name 2e4cf1
+
+D:\work_git>git cat-file -p 2e4cfa65041cb95de275b0d8c091bfe58a2cf291^
+More? 1
+fatal: Not a valid object name 2e4cfa65041cb95de275b0d8c091bfe58a2cf2911
+
+D:\work_git>git rev-parse -p 2e4cf^
+More? 1
+-p
+2e4cf1
+fatal: ambiguous argument '2e4cf1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git rev-parse -p 2e4cfa65041cb95de275b0d8c091bfe58a2cf291^
+More? 1
+-p
+2e4cfa65041cb95de275b0d8c091bfe58a2cf2911
+fatal: ambiguous argument '2e4cfa65041cb95de275b0d8c091bfe58a2cf2911': unknown revision or path not in the working tree.
+
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+(END)ress RETURN)
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 2e4cfa6 append a.txtfile... (interrupt to abort)
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>echo '' > c.txt
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  10:11    <DIR>          .
+2015/10/14  10:11    <DIR>          ..
+2015/10/14  09:21                13 a.txt
+2015/10/13  17:13                 0 b.txt
+2015/10/14  10:11                 5 c.txt
+2015/10/13  17:51                 0 中文.txt
+               4 个文件             18 字节
+               2 个目录 68,307,914,752 可用字节
+
+D:\work_git>edit c.txt
+'edit' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git>mem
+'mem' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git>git add .
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   c.txt
+#
+
+D:\work_git>git commit -m"7.1分支游标master"
+[master c941c2c] 7.1·??óαêmaster
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git log --pretty=oneline
+WARNING: terminal is not fully functional
+c941c2cd12c498df44fc6b4eb95850709e6158e6 7.1·??óαêmaster
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291 append a.txt
+ccf86cc09ce7029d6663345fce5489ad437a57c4 15-10-13
+e24742a9e923c7e2a41aab7e7f0281b63b89e95f add b.txt
+6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b add a.txt 1 git commit --amend 2
+
+D:\work_git>git rev-parse HEAD
+c941c2cd12c498df44fc6b4eb95850709e6158e6
+
+D:\work_git>git rev-parse master
+c941c2cd12c498df44fc6b4eb95850709e6158e6
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* c941c2c 7.1·??óαêmaster
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git reset --hard HEAD^
+More? e
+fatal: ambiguous argument 'HEADe': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* c941c2c 7.1·??óαêmaster
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git reset --hard HEAD^
+More? 1
+fatal: ambiguous argument 'HEAD1': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git reset --hard HEAD^
+More? ^
+HEAD is now at 2e4cfa6 append a.txt
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git reset --hard 6fcbf0c
+HEAD is now at 6fcbf0c add a.txt 1
+
+D:\work_git>git log
+WARNING: terminal is not fully functional
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:10:06 2015 +0800
+
+    add a.txt 1
+    git commit --amend 2
+
+D:\work_git>git config core.logallrefupdates
+true
+
+D:\work_git>tail -5 .git\logs\refs\heads\master
+e24742a9e923c7e2a41aab7e7f0281b63b89e95f ccf86cc09ce7029d6663345fce5489ad437a57c4 dzl <1444825431@qq.com> 1444784818 +08
+00      commit: 15-10-13
+ccf86cc09ce7029d6663345fce5489ad437a57c4 2e4cfa65041cb95de275b0d8c091bfe58a2cf291 dzl <1444825431@qq.com> 1444785705 +08
+00      commit: append a.txt
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291 c941c2cd12c498df44fc6b4eb95850709e6158e6 dzl <1444825431@qq.com> 1444788792 +08
+00      commit: 7.1分支游标master
+c941c2cd12c498df44fc6b4eb95850709e6158e6 2e4cfa65041cb95de275b0d8c091bfe58a2cf291 dzl <1444825431@qq.com> 1444788991 +08
+00      reset: moving to HEAD^
+2e4cfa65041cb95de275b0d8c091bfe58a2cf291 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b dzl <1444825431@qq.com> 1444789100 +08
+00      reset: moving to 6fcbf0c
+
+D:\work_git>git reflog show master |head -5
+6fcbf0c master@{0}: reset: moving to 6fcbf0c
+2e4cfa6 master@{1}: reset: moving to HEAD^
+c941c2c master@{2}: commit: 7.1分支游标master
+2e4cfa6 master@{3}: commit: append a.txt
+ccf86cc master@{4}: commit: 15-10-13
+
+D:\work_git>git reset --hard master@{2}
+HEAD is now at c941c2c 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  10:23    <DIR>          .
+2015/10/14  10:23    <DIR>          ..
+2015/10/14  10:23                13 a.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:23                 5 c.txt
+2015/10/14  10:23                 0 中文.txt
+               4 个文件             18 字节
+               2 个目录 68,307,906,560 可用字节
+
+D:\work_git>git log --oneline
+WARNING: terminal is not fully functional
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git reflog show master |head -10
+c941c2c master@{0}: reset: moving to master@{2}
+6fcbf0c master@{1}: reset: moving to 6fcbf0c
+2e4cfa6 master@{2}: reset: moving to HEAD^
+c941c2c master@{3}: commit: 7.1分支游标master
+2e4cfa6 master@{4}: commit: append a.txt
+ccf86cc master@{5}: commit: 15-10-13
+e24742a master@{6}: commit: add b.txt
+6fcbf0c master@{7}: commit (amend): add a.txt 1
+07afbe0 master@{8}: commit (initial): add a.txt 1
+
+D:\work_git>git reflog show master |head -20
+c941c2c master@{0}: reset: moving to master@{2}
+6fcbf0c master@{1}: reset: moving to 6fcbf0c
+2e4cfa6 master@{2}: reset: moving to HEAD^
+c941c2c master@{3}: commit: 7.1分支游标master
+2e4cfa6 master@{4}: commit: append a.txt
+ccf86cc master@{5}: commit: 15-10-13
+e24742a master@{6}: commit: add b.txt
+6fcbf0c master@{7}: commit (amend): add a.txt 1
+07afbe0 master@{8}: commit (initial): add a.txt 1
+
+D:\work_git>git branch -v
+* master c941c2c 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>echo 检出 checkout
+检出 checkout
+
+D:\work_git>git checkout c941c2c
+Note: checking out 'c941c2c'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b new_branch_name
+
+HEAD is now at c941c2c... 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git branch -v
+* (detached from c941c2c) c941c2c 7.1·??óαêmaster
+  master                  c941c2c 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git status
+# HEAD detached at c941c2c
+nothing to commit, working directory clean
+
+D:\work_git>git status -s
+
+D:\work_git>git checkout c941c2c^
+More? ^
+Previous HEAD position was c941c2c... 7.1·??óαêmaster
+HEAD is now at 2e4cfa6... append a.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git status -s
+
+D:\work_git>git branch -v
+* (detached from 2e4cfa6) 2e4cfa6 append a.txt
+  master                  c941c2c 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git checkout c941c2c^^
+HEAD is now at 2e4cfa6... append a.txt
+
+D:\work_git>git log -onelien
+fatal: unrecognized argument: -onelien
+
+D:\work_git>git log -oneline
+fatal: unrecognized argument: -oneline
+
+D:\work_git>git log --oneline
+WARNING: terminal is not fully functional
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git log HEAD
+WARNING: terminal is not fully functional
+commit 2e4cfa65041cb95de275b0d8c091bfe58a2cf291
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 09:21:45 2015 +0800
+
+    append a.txt
+
+commit ccf86cc09ce7029d6663345fce5489ad437a57c4
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 09:06:58 2015 +0800
+
+    15-10-13
+
+commit e24742a9e923c7e2a41aab7e7f0281b63b89e95f
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:14:19 2015 +0800
+
+    add b.txt
+
+commit 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:10:06 2015 +0800
+
+    add a.txt 1
+    git commit --amend 2
+
+D:\work_git>git checkout ccf86cc09
+Previous HEAD position was 2e4cfa6... append a.txt
+HEAD is now at ccf86cc... 15-10-13
+
+D:\work_git>git reflog -1
+WARNING: terminal is not fully functional
+ccf86cc HEAD@{0}: checkout: moving from 2e4cfa65041cb95de275b0d8c091bfe58a2cf291 to ccf86cc09
+
+D:\work_git>git reflog -l
+fatal: Option 'l' requires a value
+
+D:\work_git>git rev-parse HEAD master
+ccf86cc09ce7029d6663345fce5489ad437a57c4
+c941c2cd12c498df44fc6b4eb95850709e6158e6
+
+D:\work_git>echo .>detached-commit.txt
+
+D:\work_git>git add detached-commit.txt
+
+D:\work_git>git status
+# HEAD detached at ccf86cc
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   detached-commit.txt
+#
+
+D:\work_git>git commit -m "commit in detached HEAD mode."
+[detached HEAD 4435ac6] commit in detached HEAD mode.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 detached-commit.txt
+
+D:\work_git>git rev-parse HEAD master
+4435ac696702e31737c2387a10a606554315b629
+c941c2cd12c498df44fc6b4eb95850709e6158e6
+
+D:\work_git>git log --graph -oneline
+fatal: unrecognized argument: -oneline
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 4435ac6 commit in detached HEAD mode.
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git checkout master
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  4435ac6 commit in detached HEAD mode.
+
+If you want to keep them by creating a new branch, this may be a good time
+to do so with:
+
+ git branch new_branch_name 4435ac6
+
+Switched to branch 'master'
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* c941c2c 7.1·??óαêmaster
+* 2e4cfa6 append a.txt
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git show 4435ac6
+WARNING: terminal is not fully functional
+commit 4435ac696702e31737c2387a10a606554315b629
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 10:42:50 2015 +0800
+
+    commit in detached HEAD mode.
+
+diff --git a/detached-commit.txt b/detached-commit.txt
+new file mode 100644
+index 0000000..73fbd95
+--- /dev/null
++++ b/detached-commit.txt
+@@ -0,0 +1 @@
++.
+
+D:\work_git>git branch -v
+* master c941c2c 7.1·??óαêmaster
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git merge 4435ac6
+Merge made by the 'recursive' strategy.
+ detached-commit.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 detached-commit.txt
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git status -s
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+*   3d152c3 Merge commit '4435ac6'
+|\
+| * 4435ac6 commit in detached HEAD mode.
+* | c941c2c 7.1·??óαêmaster
+* | 2e4cfa6 append a.txt
+|/
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git cat-file -p HEAD
+tree 1d2a6235ccaf8eecf13afb1551e50ff00e61a9fa
+parent c941c2cd12c498df44fc6b4eb95850709e6158e6
+parent 4435ac696702e31737c2387a10a606554315b629
+author dzl <1444825431@qq.com> 1444790941 +0800
+committer dzl <1444825431@qq.com> 1444790941 +0800
+
+Merge commit '4435ac6'
+
+D:\work_git>git branch
+* master
+
+D:\work_git>git branch -v
+* master 3d152c3 Merge commit '4435ac6'
+
+D:\work_git>
+
+
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator>d:
+
+D:\>cd work_git
+
+D:\work_git>git cat-file -p HEAD
+tree 1d2a6235ccaf8eecf13afb1551e50ff00e61a9fa
+parent c941c2cd12c498df44fc6b4eb95850709e6158e6
+parent 4435ac696702e31737c2387a10a606554315b629
+author dzl <1444825431@qq.com> 1444790941 +0800
+committer dzl <1444825431@qq.com> 1444790941 +0800
+
+Merge commit '4435ac6'
+
+D:\work_git>date
+当前日期: 2015/10/14 周三
+输入新日期: (年月日)
+
+D:\work_git>date
+当前日期: 2015/10/14 周三
+输入新日期: (年月日)
+
+D:\work_git>time
+当前时间: 11:13:22.86
+输入新时间:
+
+D:\work_git>git checkout
+
+D:\work_git>git checkout HEAD
+
+D:\work_git>git status -sb
+## master
+
+D:\work_git>git log --graph --pretty=oneline --stat
+WARNING: terminal is not fully functional
+*   3d152c3fd4d40be5ef702f9218d89d2312f9489f Merge commit '4435ac6'
+|\
+| * 4435ac696702e31737c2387a10a606554315b629 commit in detached HEAD mode.
+| |  detached-commit.txt | 1 +
+| |  1 file changed, 1 insertion(+)
+* | c941c2cd12c498df44fc6b4eb95850709e6158e6 7.1·??óαêmaster
+| |  c.txt | 1 +
+| |  1 file changed, 1 insertion(+)
+* | 2e4cfa65041cb95de275b0d8c091bfe58a2cf291 append a.txt
+|/
+|    a.txt | 1 +
+|    1 file changed, 1 insertion(+)
+* ccf86cc09ce7029d6663345fce5489ad437a57c4 15-10-13
+|  中文.txt | 0
+|  1 file changed, 0 insertions(+), 0 deletions(-)
+* e24742a9e923c7e2a41aab7e7f0281b63b89e95f add b.txt
+|  b.txt | 0
+|  1 file changed, 0 insertions(+), 0 deletions(-)
+* 6fcbf0c3a28108912b8a4c6e99fe1765e8c0a05b add a.txt 1 git commit --amend 2
+   a.txt | 0
+   1 file changed, 0 insertions(+), 0 deletions(-)
+
+D:\work_git>git stash list
+
+D:\work_git>echo . >d.txt
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  11:24    <DIR>          .
+2015/10/14  11:24    <DIR>          ..
+2015/10/14  10:45                13 a.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  11:24                 4 d.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               6 个文件             25 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git add .
+
+D:\work_git>git stash
+Saved working directory and index state WIP on master: 3d152c3 Merge commit '4435ac6'
+HEAD is now at 3d152c3 Merge commit '4435ac6'
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git status -s
+
+D:\work_git>git status -sb
+## master
+
+D:\work_git>git log --graph --oneline --stat
+WARNING: terminal is not fully functional
+*   3d152c3 Merge commit '4435ac6'
+|\
+| * 4435ac6 commit in detached HEAD mode.
+| |  detached-commit.txt | 1 +
+| |  1 file changed, 1 insertion(+)
+* | c941c2c 7.1·??óαêmaster
+| |  c.txt | 1 +
+| |  1 file changed, 1 insertion(+)
+* | 2e4cfa6 append a.txt
+|/
+|    a.txt | 1 +
+|    1 file changed, 1 insertion(+)
+* ccf86cc 15-10-13
+|  中文.txt | 0
+|  1 file changed, 0 insertions(+), 0 deletions(-)
+* e24742a add b.txt
+|  b.txt | 0
+|  1 file changed, 0 insertions(+), 0 deletions(-)
+* 6fcbf0c add a.txt 1 git commit --amend 2
+   a.txt | 0
+   1 file changed, 0 insertions(+), 0 deletions(-)
+
+D:\work_git>git stash list
+WARNING: terminal is not fully functional
+stash@{0}: WIP on master: 3d152c3 Merge commit '4435ac6'
+
+D:\work_git>git stash pop
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   d.txt
+#
+Dropped refs/stash@{0} (fcc7757eca45c47257a2eca7eb9bcb95c5807d50)
+
+D:\work_git>git rev-parse HEAD master
+3d152c3fd4d40be5ef702f9218d89d2312f9489f
+3d152c3fd4d40be5ef702f9218d89d2312f9489f
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   d.txt
+#
+
+D:\work_git>git reset
+
+D:\work_git>git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       d.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\work_git>git checkout d.txt
+error: pathspec 'd.txt' did not match any file(s) known to git.
+
+D:\work_git>git add d.txt
+
+D:\work_git>git checkout d.txt
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   d.txt
+#
+
+D:\work_git>git checkout -- d.txt
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   d.txt
+#
+
+D:\work_git>git reset
+
+D:\work_git>git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       d.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\work_git>git clean -nd
+Would remove d.txt
+
+D:\work_git>git clean -fd
+Removing d.txt
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git exec-path
+git: 'exec-path' is not a git command. See 'git --help'.
+
+D:\work_git>git --exec-path
+D:\Program Files (x86)\Git/libexec/git-core
+
+D:\work_git>git stash list
+
+D:\work_git>git stash list
+
+D:\work_git>echo 第10章 Git 基本操作
+第10章 Git 基本操作
+
+D:\work_git>echo 需要应对情况不：文件删除、复制、移动、恢复、目录的组织、二进制文件
+需要应对情况不：文件删除、复制、移动、恢复、目录的组织、二进制文件
+
+D:\work_git>git tag -m "Say bye -byt to old" old practice
+fatal: Failed to resolve 'practice' as a valid ref.
+
+D:\work_git>git tag -m "Say bye -byt to old" old_practice
+
+D:\work_git>git tag
+old_practice
+v1
+
+D:\work_git>git rev-parse refs\tags\old_practice
+refs\tags\old_practice
+fatal: ambiguous argument 'refs\tags\old_practice': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>scan refs\tags\old_practice
+'scan' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git>type refs\tags\old_practice
+系统找不到指定的路径。
+
+D:\work_git>type .git\refs\tags\old_practice
+1cfa966cf3a304720bd1dc2a4f1cc6d649315880
+
+D:\work_git>echo type 查看文件内容
+type 查看文件内容
+
+D:\work_git>git describe
+old_practice
+
+D:\work_git>git stash
+No local changes to save
+
+D:\work_git>git stash  pop
+No stash found.
+
+D:\work_git>git stash
+No local changes to save
+
+D:\work_git>git status -s
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>echo . >d.txt
+
+D:\work_git>git status -s
+?? d.txt
+
+D:\work_git>git add .
+
+D:\work_git>git status -s
+A  d.txt
+
+D:\work_git>rd d.txt
+目录名称无效。
+
+D:\work_git>del d.txt
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  11:52    <DIR>          .
+2015/10/14  11:52    <DIR>          ..
+2015/10/14  10:45                13 a.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               5 个文件             21 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git ls-files
+a.txt
+b.txt
+c.txt
+d.txt
+detached-commit.txt
+中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git status -s
+AD d.txt
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       new file:   d.txt
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#       deleted:    d.txt
+#
+
+D:\work_git>git rm d.txt
+rm 'd.txt'
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git commit -m "delete trash files. rm"
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git log --oneline
+WARNING: terminal is not fully functional
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git mv a.txt a1.txt
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       renamed:    a.txt -> a1.txt
+#
+
+D:\work_git>git commit -m "rename test"
+[master 7d38d0c] rename test
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename a.txt => a1.txt (100%)
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git reset --hard HEAD^
+More? ^
+HEAD is now at 3d152c3 Merge commit '4435ac6'
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  13:27    <DIR>          .
+2015/10/14  13:27    <DIR>          ..
+2015/10/14  13:27                13 a.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               5 个文件             21 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git status -s
+
+D:\work_git>git ls-files
+a.txt
+b.txt
+c.txt
+detached-commit.txt
+中文.txt
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>replace a.txt a2.txt
+找不到路径 - D:\work_git\a2.txt
+未替换文件
+
+D:\work_git>replace a.txt filename  a2.txt
+无效的开关 - a2.txt
+未替换文件
+
+D:\work_git>replace
+需要源路径
+未替换文件
+
+D:\work_git>replace help
+
+D:\work_git>help
+有关某个命令的详细信息，请键入 HELP 命令名
+ASSOC          显示或修改文件扩展名关联。
+ATTRIB         显示或更改文件属性。
+BREAK          设置或清除扩展式 CTRL+C 检查。
+BCDEDIT        设置启动数据库中的属性以控制启动加载。
+CACLS          显示或修改文件的访问控制列表(ACL)。
+CALL           从另一个批处理程序调用这一个。
+CD             显示当前目录的名称或将其更改。
+CHCP           显示或设置活动代码页数。
+CHDIR          显示当前目录的名称或将其更改。
+CHKDSK         检查磁盘并显示状态报告。
+CHKNTFS        显示或修改启动时间磁盘检查。
+CLS            清除屏幕。
+CMD            打开另一个 Windows 命令解释程序窗口。
+COLOR          设置默认控制台前景和背景颜色。
+COMP           比较两个或两套文件的内容。
+COMPACT        显示或更改 NTFS 分区上文件的压缩。
+CONVERT        将 FAT 卷转换成 NTFS。您不能转换
+               当前驱动器。
+COPY           将至少一个文件复制到另一个位置。
+DATE           显示或设置日期。
+DEL            删除至少一个文件。
+DIR            显示一个目录中的文件和子目录。
+DISKCOMP       比较两个软盘的内容。
+DISKCOPY       将一个软盘的内容复制到另一个软盘。
+DISKPART       显示或配置磁盘分区属性。
+DOSKEY         编辑命令行、调用 Windows 命令并创建宏。
+DRIVERQUERY    显示当前设备驱动程序状态和属性。
+ECHO           显示消息，或将命令回显打开或关上。
+ENDLOCAL       结束批文件中环境更改的本地化。
+ERASE          删除一个或多个文件。
+EXIT           退出 CMD.EXE 程序(命令解释程序)。
+FC             比较两个文件或两个文件集并显示它们之间的不同。
+FIND           在一个或多个文件中搜索一个文本字符串。
+FINDSTR        在多个文件中搜索字符串。
+FOR            为一套文件中的每个文件运行一个指定的命令。
+FORMAT         格式化磁盘，以便跟 Windows 使用。
+FSUTIL         显示或配置文件系统的属性。
+FTYPE          显示或修改用在文件扩展名关联的文件类型。
+GOTO           将 Windows 命令解释程序指向批处理程序
+               中某个带标签的行。
+GPRESULT       显示机器或用户的组策略信息。
+GRAFTABL       启用 Windows 在图形模式显示扩展字符集。
+HELP           提供 Windows 命令的帮助信息。
+ICACLS         显示、修改、备份或还原文件和
+ 目录的 ACL。
+IF             在批处理程序中执行有条件的处理过程。
+LABEL          创建、更改或删除磁盘的卷标。
+MD             创建一个目录。
+MKDIR          创建一个目录。
+MKLINK         创建符号链接和硬链接
+MODE           配置系统设备。
+MORE           逐屏显示输出。
+MOVE           将一个或多个文件从一个目录移动到另一个目录。
+OPENFILES      显示远程用户为了文件共享而打开的文件。
+PATH           为可执行文件显示或设置搜索路径。
+PAUSE          停止批处理文件的处理并显示信息。
+POPD           还原由 PUSHD 保存的当前目录上一次的值。
+PRINT          打印一个文本文件。
+PROMPT         改变 Windows 命令提示。
+PUSHD          保存当前目录，然后对其进行更改。
+RD             删除目录。
+RECOVER        从损坏的磁盘中恢复可读取的信息。
+REM            记录批处理文件或 CONFIG.SYS 中的注释。
+REN            重新命名文件。
+RENAME         重新命名文件。
+REPLACE        替换文件。
+RMDIR          删除目录。
+ROBOCOPY       复制文件和目录树的高级实用程序
+SET            显示、设置或删除 Windows 环境变量。
+SETLOCAL       开始用批文件改变环境的本地化。
+SC             显示或配置服务(后台处理)。
+SCHTASKS       安排命令和程序在一部计算机上按计划运行。
+SHIFT          调整批处理文件中可替换参数的位置。
+SHUTDOWN       让机器在本地或远程正确关闭。
+SORT           将输入排序。
+START          打开单独视窗运行指定程序或命令。
+SUBST          将驱动器号与路径关联。
+SYSTEMINFO     显示机器的具体的属性和配置。
+TASKLIST       显示包括服务的所有当前运行的任务。
+TASKKILL       终止正在运行的进程或应用程序。
+TIME           显示或设置系统时间。
+TITLE          设置 CMD.EXE 会话的窗口标题。
+TREE           以图形显示启动器或路径的目录结构。
+TYPE           显示文本文件的内容。
+VER            显示 Windows 的版本。
+VERIFY         告诉 Windows 验证文件是否正确写入磁盘。
+VOL            显示磁盘卷标和序列号。
+XCOPY          复制文件和目录树。
+WMIC           在交互命令外壳里显示 WMI 信息。
+
+有关工具的详细信息，请参阅联机帮助中的命令行参考。
+
+D:\work_git>replace help
+
+D:\work_git>help replace
+替换文件。
+
+REPLACE [drive1:][path1]filename [drive2:][path2] [/A] [/P] [/R] [/W]
+REPLACE [drive1:][path1]filename [drive2:][path2] [/P] [/R] [/S] [/W] [/U]
+
+  [drive1:][path1]filename 指定源文件。
+  [drive2:][path2]         指定要替换文件的目录。
+  /A                       把新文件加入目标目录。不能和/S 或 /U 命令行开关搭配使用。
+  /P                       替换文件或加入源文件之前会先提示您进行确认。
+  /R                       替换只读文件以及未受保护的文件。
+  /S                       替换目标目录中所有子目录的文件。不能与 /A 命令开关搭配使用。
+  /W                       等您插入磁盘以后再运行。
+  /U                       只会替换或更新比源文件日期早的文件。不能与 /A 命令行开关搭配使用。
+
+D:\work_git>replace a.txt filename a2.txt /a
+无效的开关 - a2.txt
+未替换文件
+
+D:\work_git>replace a.txt filename a2.txt /A
+无效的开关 - a2.txt
+未替换文件
+
+D:\work_git>help rename
+重命名文件。
+
+RENAME [drive:][path]filename1 filename2.
+REN [drive:][path]filename1 filename2.
+
+请注意，您不能为目标文件指定新的驱动器或路径。
+
+D:\work_git>rename a.txt a2.txt
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  13:35    <DIR>          .
+2015/10/14  13:35    <DIR>          ..
+2015/10/14  13:27                13 a2.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               5 个文件             21 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git status -s
+ D a.txt
+?? a2.txt
+
+D:\work_git>echo "rename append " >> a2.txt
+
+D:\work_git>git status -s
+ D a.txt
+?? a2.txt
+
+D:\work_git>git add -A
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       deleted:    a.txt
+#       new file:   a2.txt
+#
+
+D:\work_git>git commit -m"rename append fail why"
+[master 07f41ff] rename append fail why
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ delete mode 100644 a.txt
+ create mode 100644 a2.txt
+
+D:\work_git>move a2.txt a3.txt
+移动了         1 个文件。
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  13:39    <DIR>          .
+2015/10/14  13:39    <DIR>          ..
+2015/10/14  13:36                32 a3.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               5 个文件             40 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git status -s
+ D a2.txt
+?? a3.txt
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 0009-1B9C
+
+ D:\work_git 的目录
+
+2015/10/14  13:39    <DIR>          .
+2015/10/14  13:39    <DIR>          ..
+2015/10/14  13:36                32 a3.txt
+2015/10/14  10:23                 0 b.txt
+2015/10/14  10:45                 5 c.txt
+2015/10/14  10:49                 3 detached-commit.txt
+2015/10/14  10:23                 0 中文.txt
+               5 个文件             40 字节
+               2 个目录 68,307,881,984 可用字节
+
+D:\work_git>git status -s
+ D a2.txt
+?? a3.txt
+
+D:\work_git>move a3.txt a2.txt
+移动了         1 个文件。
+
+D:\work_git>git status -s
+
+D:\work_git>git describe
+old_practice-1-g07f41ff
+
+D:\work_git>git describe
+old_practice-1-g07f41ff
+
+D:\work_git>git branch HEAD master
+fatal: it does not make sense to create 'HEAD' manually
+
+D:\work_git>git rev-parse HEAd master
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+
+D:\work_git>git log --oneline --decorate -4
+WARNING: terminal is not fully functional
+07f41ff (HEAD, master) rename append fail why
+3d152c3 (tag: old_practice) Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+
+D:\work_git>git log --oneline --decorate -20
+WARNING: terminal is not fully functional
+07f41ff (HEAD, master) rename append fail why
+3d152c3 (tag: old_practice) Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>copy con new.txt
+^Z
+已复制         1 个文件。
+
+D:\work_git>copy >new2.txt
+
+D:\work_git>edit new2.txt
+'edit' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git>help copy
+将一份或多份文件复制到另一个位置。
+
+COPY [/D] [/V] [/N] [/Y | /-Y] [/Z] [/L] [/A | /B ] source [/A | /B]
+     [+ source [/A | /B] [+ ...]] [destination [/A | /B]]
+
+  source       指定要复制的文件。
+  /A           表示一个 ASCII 文本文件。
+  /B           表示一个二进位文件。
+  /D           允许解密要创建的目标文件
+  destination  为新文件指定目录和/或文件名。
+  /V           验证新文件写入是否正确。
+  /N           复制带有非 8dot3 名称的文件时，
+               尽可能使用短文件名。
+  /Y           不使用确认是否要覆盖现有目标文件
+               的提示。
+  /-Y          使用确认是否要覆盖现有目标文件
+               的提示。
+  /Z           用可重新启动模式复制已联网的文件。
+/L           如果源是符号链接，请将链接复制
+               到目标而不是源链接指向的实际文件。
+
+命令行开关 /Y 可以在 COPYCMD 环境变量中预先设定。
+这可能会被命令行上的 /-Y 替代。除非 COPY
+命令是在一个批处理脚本中执行的，默认值应为
+在覆盖时进行提示。
+
+要附加文件，请为目标指定一个文件，为源指定
+数个文件(用通配符或 file1+file2+file3 格式)。
+
+D:\work_git>git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       new.txt
+#       new2.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\work_git>del new2.txt
+
+D:\work_git>git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#       new.txt
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\work_git>del new.txt
+
+D:\work_git>git status
+# On branch master
+nothing to commit, working directory clean
+
+D:\work_git>git add -i
+           staged     unstaged path
+
+
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> h
+status        - show paths with changes
+update        - add working tree state to the staged set of changes
+revert        - revert staged set of changes back to the HEAD version
+patch         - pick hunks and update selectively
+diff          - view diff between HEAD and index
+add untracked - add contents of untracked files to the staged set of changes
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> q
+Bye.
+
+D:\work_git>git add -i
+           staged     unstaged path
+
+
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> s
+           staged     unstaged path
+
+
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> 2
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> 4
+
+Add untracked>> q
+Huh (q)?
+
+Add untracked>> q
+Huh (q)?
+
+Add untracked>>
+
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now>
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now>
+*** Commands ***
+  1: status       2: update       3: revert       4: add untracked
+  5: patch        6: diff         7: quit         8: help
+What now> q
+Bye.
+
+D:\work_git>git rev-list HEAD | wc -l
+8
+
+D:\work_git>git log --oneline
+WARNING: terminal is not fully functional
+07f41ff rename append fail why
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>gitk --all
+'gitk' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+
+D:\work_git>git rev-parse --symbolic --branches
+master
+
+D:\work_git>git rev-parse --symbolic --tags
+old_practice
+v1
+
+D:\work_git>git rev-parse --symbolic --glob=refs/*
+refs/heads/master
+refs/tags/old_practice
+refs/tags/v1
+
+D:\work_git>git rev-parse HEAD
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+
+D:\work_git>git describe
+old_practice-1-g07f41ff
+
+D:\work_git>git rev-parse old_practice-1-g07f41ff
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+
+D:\work_git>git rev-parse master refs\heads\master
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+refs\heads\master
+fatal: ambiguous argument 'refs\heads\master': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git rev-parse master refs/heads/master
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+
+D:\work_git>git rev-lise
+git: 'rev-lise' is not a git command. See 'git --help'.
+
+Did you mean this?
+        rev-list
+
+D:\work_git>git rev-list
+usage: git rev-list [OPTION] <commit-id>... [ -- paths... ]
+  limiting output:
+    --max-count=<n>
+    --max-age=<epoch>
+    --min-age=<epoch>
+    --sparse
+    --no-merges
+    --min-parents=<n>
+    --no-min-parents
+    --max-parents=<n>
+    --no-max-parents
+    --remove-empty
+    --all
+    --branches
+    --tags
+    --remotes
+    --stdin
+    --quiet
+  ordering output:
+    --topo-order
+    --date-order
+    --reverse
+  formatting output:
+    --parents
+    --children
+    --objects | --objects-edge
+    --unpacked
+    --header | --pretty
+    --abbrev=<n> | --no-abbrev
+    --abbrev-commit
+    --left-right
+  special purpose:
+    --bisect
+    --bisect-vars
+    --bisect-all
+
+D:\work_git>git rev-list --oneline A
+fatal: ambiguous argument 'A': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git rev-list --oneline master
+07f41ff rename append fail why
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git rev-list --oneline v1
+07afbe0 add a.txt 1
+
+D:\work_git>git rev-list --oneline D F
+fatal: ambiguous argument 'D': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+D:\work_git>git rev-list --oneline v1 old_practice
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+c941c2c 7.1·??óαêmaster
+2e4cfa6 append a.txt
+ccf86cc 15-10-13
+e24742a add b.txt
+6fcbf0c add a.txt 1 git commit --amend 2
+07afbe0 add a.txt 1
+
+Warning: Your console font probably doesn't support Unicode. If you experience strange characters in the output, conside
+r switching to a TrueType font such as Lucida Console!
+
+D:\work_git>git log --graph --oneline
+WARNING: terminal is not fully functional
+* 07f41ff rename append fail why
+*   3d152c3 Merge commit '4435ac6'
+|\
+| * 4435ac6 commit in detached HEAD mode.
+* | c941c2c 7.1·??óαêmaster
+* | 2e4cfa6 append a.txt
+|/
+* ccf86cc 15-10-13
+* e24742a add b.txt
+* 6fcbf0c add a.txt 1 git commit --amend 2
+
+D:\work_git>git log -3 --oneline
+WARNING: terminal is not fully functional
+07f41ff rename append fail why
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+
+D:\work_git>git log -3 --pretty --oneline
+WARNING: terminal is not fully functional
+07f41ff rename append fail why
+3d152c3 Merge commit '4435ac6'
+4435ac6 commit in detached HEAD mode.
+
+D:\work_git>git log -3 --graph --oneline
+WARNING: terminal is not fully functional
+* 07f41ff rename append fail why
+*   3d152c3 Merge commit '4435ac6'
+|\
+| * 4435ac6 commit in detached HEAD mode.
+
+D:\work_git>git log -p -l
+fatal: Option 'l' requires a value
+
+D:\work_git>git log -p -1
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+diff --git a/a.txt b/a.txt
+deleted file mode 100644
+index 1cd7683..0000000
+--- a/a.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-"Bye Bye."
+diff --git a/a2.txt b/a2.txt
+new file mode 100644
+index 0000000..4b20341
+--- /dev/null
++++ b/a2.txt
+@@ -0,0 +1,2 @@
++"Bye Bye."
++"rename append "
+
+D:\work_git>git log -p -2
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+diff --git a/a.txt b/a.txt
+deleted file mode 100644
+index 1cd7683..0000000
+--- a/a.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-"Bye Bye."
+diff --git a/a2.txt b/a2.txt
+new file mode 100644
+index 0000000..4b20341
+--- /dev/null
++++ b/a2.txt
+@@ -0,0 +1,2 @@
++"Bye Bye."
++"rename append "
+
+commit 3d152c3fd4d40be5ef702f9218d89d2312f9489f
+Merge: c941c2c 4435ac6
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 10:49:01 2015 +0800
+
+    Merge commit '4435ac6'
+
+D:\work_git>git log --fuller -1
+fatal: unrecognized argument: --fuller
+
+D:\work_git>git log --pretty=fuller -1
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 13:37:54 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+D:\work_git>git log --pretty=fuller -2
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 13:37:54 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+commit 3d152c3fd4d40be5ef702f9218d89d2312f9489f
+Merge: c941c2c 4435ac6
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 10:49:01 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 10:49:01 2015 +0800
+
+    Merge commit '4435ac6'
+
+D:\work_git>git log --pretty=fuller -3
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 13:37:54 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+commit 3d152c3fd4d40be5ef702f9218d89d2312f9489f
+Merge: c941c2c 4435ac6
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 10:49:01 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 10:49:01 2015 +0800
+
+    Merge commit '4435ac6'
+
+commit 4435ac696702e31737c2387a10a606554315b629
+Author:     dzl <1444825431@qq.com>
+AuthorDate: Wed Oct 14 10:42:50 2015 +0800
+Commit:     dzl <1444825431@qq.com>
+CommitDate: Wed Oct 14 10:42:50 2015 +0800
+
+    commit in detached HEAD mode.
+
+D:\work_git>git log -3
+WARNING: terminal is not fully functional
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+commit 3d152c3fd4d40be5ef702f9218d89d2312f9489f
+Merge: c941c2c 4435ac6
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 10:49:01 2015 +0800
+
+    Merge commit '4435ac6'
+
+commit 4435ac696702e31737c2387a10a606554315b629
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 10:42:50 2015 +0800
+
+    commit in detached HEAD mode.
+
+D:\work_git>git show v1 --stat
+WARNING: terminal is not fully functional
+commit 07afbe08243c1d84a0923c8a7b64d4cd6a9d4ca2
+Author: dzl <1444825431@qq.com>
+Date:   Tue Oct 13 17:10:06 2015 +0800
+
+    add a.txt 1
+
+ a.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+D:\work_git>git show old_practice --stat
+WARNING: terminal is not fully functional
+tag old_practice)
+Tagger: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 11:45:01 2015 +0800
+
+Say bye -byt to old
+
+commit 3d152c3fd4d40be5ef702f9218d89d2312f9489f
+Merge: c941c2c 4435ac6
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 10:49:01 2015 +0800
+
+    Merge commit '4435ac6'
+
+ detached-commit.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+D:\work_git>git diff v1 old_practice
+WARNING: terminal is not fully functional
+diff --git a/a.txt b/a.txt
+index e69de29..1cd7683 100644
+--- a/a.txt
++++ b/a.txt
+@@ -0,0 +1 @@
++"Bye Bye."
+diff --git a/b.txt b/b.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/c.txt b/c.txt
+new file mode 100644
+index 0000000..67e77de
+--- /dev/null
++++ b/c.txt
+@@ -0,0 +1 @@
++''
+diff --git a/detached-commit.txt b/detached-commit.txt
+new file mode 100644
+index 0000000..73fbd95
+--- /dev/null
++++ b/detached-commit.txt
+@@ -0,0 +1 @@
++.
+diff --git a/中文.txt b/中文.txt
+new file mode 100644
+index 0000000..e69de29
+
+D:\work_git>git blame a.txt
+fatal: cannot stat path 'a.txt': No such file or directory
+
+D:\work_git>git blame a2.txt
+WARNING: terminal is not fully functional
+07f41ff3 (dzl 2015-10-14 13:37:54 +0800 1) "Bye Bye."
+07f41ff3 (dzl 2015-10-14 13:37:54 +0800 2) "rename append "
+
+D:\work_git>echo test blame >> a2.txt
+
+D:\work_git>git add .
+
+D:\work_git>git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#       modified:   a2.txt
+#
+
+D:\work_git>git commit -m"mod a2.txt"
+[master 919d523] mod a2.txt
+ 1 file changed, 1 insertion(+)
+
+D:\work_git>git status -s
+
+D:\work_git>git blame a2.txt
+WARNING: terminal is not fully functional
+07f41ff3 (dzl 2015-10-14 13:37:54 +0800 1) "Bye Bye."
+07f41ff3 (dzl 2015-10-14 13:37:54 +0800 2) "rename append "
+919d5234 (dzl 2015-10-14 14:23:04 +0800 3) test blame
+
+D:\work_git>git blame -L 2,+2 a2.txt
+WARNING: terminal is not fully functional
+07f41ff3 (dzl 2015-10-14 13:37:54 +0800 2) "rename append "
+919d5234 (dzl 2015-10-14 14:23:04 +0800 3) test blame
+
+D:\work_git>git log --stat -2
+WARNING: terminal is not fully functional
+commit 919d5234ef18077c22df6d811cb89a10e23833af
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 14:23:04 2015 +0800
+
+    mod a2.txt
+
+ a2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+ a.txt  | 1 -
+ a2.txt | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+D:\work_git>git commit -amend -m "mod amend this "
+error: did you mean `--amend` (with two dashes ?)
+
+D:\work_git>git commit --amend -m "mod amend this "
+[master 587bf56] mod amend this
+ 1 file changed, 1 insertion(+)
+
+D:\work_git>git log --stat -2
+WARNING: terminal is not fully functional
+commit 587bf56cd75f6efe159a1a897e8cb526b6e4f198
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 14:23:04 2015 +0800
+
+    mod amend this
+
+ a2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 07f41ff3fbef7e1899f022539b9e93c4b90f4dc8
+Author: dzl <1444825431@qq.com>
+Date:   Wed Oct 14 13:37:54 2015 +0800
+
+    rename append fail why
+
+ a.txt  | 1 -
+ a2.txt | 2 ++
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+D:\work_git>
