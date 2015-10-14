@@ -4058,3 +4058,952 @@ Date:   Wed Oct 14 13:37:54 2015 +0800
  2 files changed, 2 insertions(+), 1 deletion(-)
 
 D:\work_git>
+
+
+------------------------------- 15-10-14 20:00 ---------------------------------------------
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator>d:
+
+D:\>cd work_git_learning\git_learning
+
+D:\work_git_learning\git_learning>git pull
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/dzl1444825431/git_learning
+   fe00a5d..6a4d78b  master     -> origin/master
+Updating fe00a5d..6a4d78b
+Fast-forward
+ git_learning.log | 2144 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ git_learning.sql |   94 +++
+ 2 files changed, 2238 insertions(+)
+
+D:\work_git_learning\git_learning>git log --oneline
+6a4d78b 15-10-14 第6章 ~ 第14章log
+fe00a5d 第一到第五章 log
+4eac59e 10-13 git code commit
+9ccba0c 10-13 git learnig log
+641a09a add file git_learning.sql
+26a964e Initial commit
+
+D:\work_git_learning\git_learning>cd ..\..\work_git
+
+D:\work_git>git init
+Initialized empty Git repository in D:/work_git/.git/
+
+D:\work_git>echo aaaa1 > a.txt
+
+D:\work_git>git add a.txt
+
+D:\work_git>git commit -m"add a.txt @1"
+[master (root-commit) 8e5bdce] add a.txt @1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a.txt
+
+D:\work_git>echo aaaa2 > a2.txt
+
+D:\work_git>git add a2.txt
+
+D:\work_git>git status -s
+A  a2.txt
+
+D:\work_git>git clone d:\work_git d:\work_git2
+Cloning into 'd:\work_git2'...
+done.
+
+D:\work_git>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git 的目录
+
+2015/10/14  20:22    <DIR>          .
+2015/10/14  20:22    <DIR>          ..
+2015/10/14  20:21                 8 a.txt
+2015/10/14  20:22                 8 a2.txt
+               2 个文件             16 字节
+               2 个目录 50,453,549,056 可用字节
+
+D:\work_git>dir ..\work_git2
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git2 的目录
+
+2015/10/14  20:23    <DIR>          .
+2015/10/14  20:23    <DIR>          ..
+2015/10/14  20:23                 8 a.txt
+               1 个文件              8 字节
+               2 个目录 50,453,549,056 可用字节
+
+D:\work_git>git commit --allow-empty -m "sync test1"
+[master 76fa1ec] sync test1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 a2.txt
+
+D:\work_git>git commit --allow-empty -m "sync test2"
+[master 27f5456] sync test2
+
+D:\work_git>git push d:\work_git2
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream d:\work_git2 master
+
+
+D:\work_git>git status -s
+
+D:\work_git>echo aaaa2 > a3.txt
+
+D:\work_git>git status -s
+?? a3.txt
+
+D:\work_git>git add a3.txt
+
+D:\work_git>git log --oneline -2
+27f5456 sync test2
+76fa1ec sync test1
+
+D:\work_git>git log --oneline -1
+27f5456 sync test2
+
+D:\work_git>git remote -v
+
+D:\work_git>type d:\work_git2\.git\config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hideDotFiles = dotGitOnly
+[remote "origin"]
+        url = d:\\work_git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+D:\work_git>git clone --bare d:\work_git d:\work_git3\git3.git
+Cloning into bare repository 'd:\work_git3\git3.git'...
+done.
+
+D:\work_git>dir d:\work_git3
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ d:\work_git3 的目录
+
+2015/10/14  20:46    <DIR>          .
+2015/10/14  20:46    <DIR>          ..
+2015/10/14  20:46    <DIR>          git3.git
+               0 个文件              0 字节
+               3 个目录 50,452,918,272 可用字节
+
+D:\work_git>git clone --bare d:\work_git d:\work_git3\.git
+Cloning into bare repository 'd:\work_git3\.git'...
+done.
+
+D:\work_git>dir d:\work_git3\.git
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ d:\work_git3\.git 的目录
+
+2015/10/14  20:48    <DIR>          .
+2015/10/14  20:48    <DIR>          ..
+2015/10/14  20:48               169 config
+2015/10/14  20:48                73 description
+2015/10/14  20:48                23 HEAD
+2015/10/14  20:48    <DIR>          hooks
+2015/10/14  20:48    <DIR>          info
+2015/10/14  20:48    <DIR>          objects
+2015/10/14  20:48                98 packed-refs
+2015/10/14  20:48    <DIR>          refs
+               4 个文件            363 字节
+               6 个目录 50,452,877,312 可用字节
+
+D:\work_git>git log --oneline
+27f5456 sync test2
+76fa1ec sync test1
+8e5bdce add a.txt @1
+
+D:\work_git>git push d:\work_git3\.git
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream d:\work_git3\.git master
+
+
+D:\work_git>git show-refs
+git: 'show-refs' is not a git command. See 'git --help'.
+
+Did you mean this?
+        show-ref
+
+D:\work_git>git show-ref
+27f54563afea4471526aa52b9eeda1911313f92a refs/heads/master
+
+D:\work_git>
+
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator>d:
+
+D:\>cd work_git2
+
+D:\work_git2>git remote -v
+origin  d:\work_git (fetch)
+origin  d:\work_git (push)
+
+D:\work_git2>type .git\config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hideDotFiles = dotGitOnly
+[remote "origin"]
+        url = d:\\work_git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+D:\work_git2>cd ..\work_git3
+
+D:\work_git3>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+D:\work_git3>git push d:\work_git3\.git
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+
+D:\work_git3>git log --oneline
+27f5456 sync test2
+76fa1ec sync test1
+8e5bdce add a.txt @1
+
+D:\work_git3>git log --oneline
+fatal: Not a git repository (or any of the parent directories): .git
+
+D:\work_git3>git clone d:\work_git
+Cloning into 'work_git'...
+done.
+
+D:\work_git3>git clone d:\work_git d:\work_git3
+Cloning into 'd:\work_git3'...
+done.
+
+D:\work_git3>git show-ref
+27f54563afea4471526aa52b9eeda1911313f92a refs/heads/master
+27f54563afea4471526aa52b9eeda1911313f92a refs/remotes/origin/HEAD
+27f54563afea4471526aa52b9eeda1911313f92a refs/remotes/origin/master
+
+D:\work_git3>git pack-refs --all
+
+D:\work_git3>
+
+
+---------------------------------------- 2015-10-14 23:30 ----------------------------------------------
+
+
+D:\work_git>git init --bare d:\work_git\shared.git
+Initialized empty Git repository in d:/work_git/shared.git/
+
+D:\work_git>
+
+Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\Administrator>d:
+
+D:\>cd work_git1
+
+D:\work_git1>git clone file:///d:\work_git\shared.git
+Cloning into 'shared'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+
+D:\work_git1>git config user.name user1
+
+D:\work_git1>git config user.email user1@qq.com
+
+D:\work_git1>git log --oneline
+fatal: Not a git repository (or any of the parent directories): .git
+
+D:\work_git1>cd shared
+
+D:\work_git1\shared>git config user.email user1@qq.com
+
+D:\work_git1\shared>git config user.name user1
+
+D:\work_git1\shared>git log --oneline
+fatal: bad default revision 'HEAD'
+
+D:\work_git1\shared>echo Hello. >README
+
+D:\work_git1\shared>git add README
+
+D:\work_git1\shared>git commit -m"initial commit user1"
+[master (root-commit) 32944ab] initial commit user1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README
+
+D:\work_git1\shared>git log --oneline
+32944ab initial commit user1
+
+D:\work_git1\shared>git push origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 209 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To file:///d:\work_git\shared.git
+ * [new branch]      master -> master
+
+D:\work_git1\shared>copy con user1.txt
+^Z
+已复制         1 个文件。
+
+D:\work_git1\shared>dir
+ 驱动器 D 中的卷是 软件
+ 卷的序列号是 000D-8448
+
+ D:\work_git1\shared 的目录
+
+2015/10/14  22:16    <DIR>          .
+2015/10/14  22:16    <DIR>          ..
+2015/10/14  22:09                 9 README
+2015/10/14  22:16                 0 user1.txt
+               2 个文件              9 字节
+               2 个目录 50,451,329,024 可用字节
+
+D:\work_git1\shared>echo "I~m user1? ">user1.txt
+
+D:\work_git1\shared>git add user1.txt
+
+D:\work_git1\shared>git commit -m "user1~s profile"
+[master f14873d] user1~s profile
+ 1 file changed, 1 insertion(+)
+ create mode 100644 user1.txt
+
+D:\work_git1\shared>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 279 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To file:///d:\work_git\shared.git
+   32944ab..f14873d  master -> master
+
+D:\work_git1\shared>git log --oneline --graph
+* f14873d user1~s profile
+* 32944ab initial commit user1
+
+D:\work_git1\shared>git rev-liset HEAD
+git: 'rev-liset' is not a git command. See 'git --help'.
+
+Did you mean this?
+        rev-list
+
+D:\work_git1\shared>git rev-list HEAD
+f14873d8a9513d9da0d07d33f2370fa2a80b2a71
+32944ab2b111dc3026a8368760c2869dbbc997e8
+
+D:\work_git1\shared>git ls-remote origin
+f14873d8a9513d9da0d07d33f2370fa2a80b2a71        HEAD
+f14873d8a9513d9da0d07d33f2370fa2a80b2a71        refs/heads/master
+
+D:\work_git1\shared>git pull
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (5/5), done.
+From file:///d:\work_git\shared
+   f14873d..66a9747  master     -> origin/master
+Updating f14873d..66a9747
+Fast-forward
+ user2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 user2.txt
+
+D:\work_git1\shared>git rev-list HEAD
+66a9747aef20b3c032759c77ed7aa79dc3ca05cc
+bed5bd2f0b5d56604822b4c39f55fb11fb378343
+f14873d8a9513d9da0d07d33f2370fa2a80b2a71
+32944ab2b111dc3026a8368760c2869dbbc997e8
+
+D:\work_git1\shared>git ls-remote origin
+66a9747aef20b3c032759c77ed7aa79dc3ca05cc        HEAD
+66a9747aef20b3c032759c77ed7aa79dc3ca05cc        refs/heads/master
+
+D:\work_git1\shared>echo "hack by user1 at 'date'">>user1.txt
+
+D:\work_git1\shared>git add -u
+
+D:\work_git1\shared>git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   user1.txt
+
+
+D:\work_git1\shared>git commit -m"update user1.txt"
+[master 00a13bc] update user1.txt
+ 1 file changed, 1 insertion(+)
+
+D:\work_git1\shared>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 327 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To file:///d:\work_git\shared.git
+   66a9747..00a13bc  master -> master
+
+D:\work_git1\shared>git pull
+remote: Counting objects: 5, done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 2), reused 0 (delta 0)
+Unpacking objects: 100% (5/5), done.
+From file:///d:\work_git\shared
+   00a13bc..80c2463  master     -> origin/master
+Updating 00a13bc..80c2463
+Fast-forward
+ user2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+D:\work_git1\shared>type README
+Hello.
+
+D:\work_git1\shared>echo User1 hacked >> README
+
+D:\work_git1\shared>type README
+Hello.
+User1 hacked
+
+D:\work_git1\shared>git add -u
+
+D:\work_git1\shared>git commit -m "User1 hack at the beginning"
+[master 81abf6a] User1 hack at the beginning
+ 1 file changed, 1 insertion(+)
+
+D:\work_git1\shared>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To file:///d:\work_git\shared.git
+   80c2463..81abf6a  master -> master
+
+D:\work_git1\shared>type README
+Hello.
+User1 hacked
+
+D:\work_git1\shared>git pull
+Already up-to-date.
+
+D:\work_git1\shared>type README
+Hello.
+User1 hacked
+
+D:\work_git1\shared>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Everything up-to-date
+
+D:\work_git1\shared>type README
+Hello.
+User1 hacked
+
+D:\work_git1\shared>git log --oneline
+81abf6a User1 hack at the beginning
+80c2463 Merge remote-tracking branch 'refs/remotes/origin/master'
+8f47c1e update user2.txt
+00a13bc update user1.txt
+66a9747 Merge branch 'master' of file:///d:\work_git\shared
+bed5bd2 user2~s profile
+f14873d user1~s profile
+32944ab initial commit user1
+
+D:\work_git1\shared>
+
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Find by binary search the change that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Forward-port local commits to the updated upstream head
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+
+D:\work_git2\project>echo User2 hacked. >> README
+
+D:\work_git2\project>git add -u
+
+D:\work_git2\project>git commit -m "User2 hack at th"
+[master f49233c] User2 hack at th
+ 1 file changed, 1 insertion(+)
+
+D:\work_git2\project>git fetch
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0)
+Unpacking objects: 100% (3/3), done.
+From file:///d:\work_git\shared
+   80c2463..81abf6a  master     -> origin/master
+
+D:\work_git2\project>git merge refs/remotes/origin/master
+Auto-merging README
+CONFLICT (content): Merge conflict in README
+Automatic merge failed; fix conflicts and then commit the result.
+
+D:\work_git2\project>type README
+Hello.
+<<<<<<< HEAD
+User2 hacked.
+=======
+User1 hacked
+>>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+To file:///d:\work_git\shared.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'file:///d:\work_git\shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+D:\work_git2\project>type README
+Hello.
+<<<<<<< HEAD
+User2 hacked.
+=======
+User1 hacked
+>>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git blame README
+^32944ab (user1             2015-10-14 22:09:59 +0800 1) Hello.
+00000000 (Not Committed Yet 2015-10-14 23:20:52 +0800 2) <<<<<<< HEAD
+f49233cd (user2             2015-10-14 23:17:48 +0800 3) User2 hacked.
+00000000 (Not Committed Yet 2015-10-14 23:20:52 +0800 4) =======
+81abf6a8 (user1             2015-10-14 23:16:49 +0800 5) User1 hacked
+00000000 (Not Committed Yet 2015-10-14 23:20:52 +0800 6) >>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git pull
+U       README
+Pull is not possible because you have unmerged files.
+Please, fix them up in the work tree, and then use 'git add/rm <file>'
+as appropriate to mark resolution and make a commit.
+
+D:\work_git2\project>type README
+Hello.
+<<<<<<< HEAD
+User2 hacked.
+=======
+User1 hacked
+>>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git push
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+To file:///d:\work_git\shared.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'file:///d:\work_git\shared.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+D:\work_git2\project>git merge refs/remotes/origin/master
+error: merge is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+D:\work_git2\project>git merge refs\remotes\origin\master
+error: merge is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+
+D:\work_git2\project>git status
+On branch master
+Your branch and 'origin/master' have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+        both modified:   README
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\work_git2\project>git reset HEAD^
+More? ^
+Unstaged changes after reset:
+M       README
+
+D:\work_git2\project>git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\work_git2\project>git status -s
+ M README
+
+D:\work_git2\project>type README
+Hello.
+<<<<<<< HEAD
+User2 hacked.
+=======
+User1 hacked
+>>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git reset HEAD^
+More? ^
+Unstaged changes after reset:
+M       README
+M       user1.txt
+
+D:\work_git2\project>type README
+Hello.
+<<<<<<< HEAD
+User2 hacked.
+=======
+User1 hacked
+>>>>>>> refs/remotes/origin/master
+
+D:\work_git2\project>git log --oneline
+8f47c1e update user2.txt
+66a9747 Merge branch 'master' of file:///d:\work_git\shared
+bed5bd2 user2~s profile
+f14873d user1~s profile
+32944ab initial commit user1
+
+D:\work_git2\project>git checkout --cached
+error: unknown option `cached'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -q, --quiet           suppress progress reporting
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --detach              detach the HEAD at named commit
+    -t, --track           set upstream info for new branch
+    --orphan <new-branch>
+                          new unparented branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -f, --force           force checkout (throw away local modifications)
+    -m, --merge           perform a 3-way merge with the new branch
+    --overwrite-ignore    update ignored files (default)
+    --conflict <style>    conflict style (merge or diff3)
+    -p, --patch           select hunks interactively
+    --ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --ignore-other-worktrees
+                          do not check if another worktree is holding the given ref
+
+
+D:\work_git2\project>git checkout 8f47c1e
+M       README
+M       user1.txt
+Note: checking out '8f47c1e'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by performing another checkout.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -b with the checkout command again. Example:
+
+  git checkout -b <new-branch-name>
+
+HEAD is now at 8f47c1e... update user2.txt
+
+D:\work_git2\project>git log --oneline
+8f47c1e update user2.txt
+66a9747 Merge branch 'master' of file:///d:\work_git\shared
+bed5bd2 user2~s profile
+f14873d user1~s profile
+32944ab initial commit user1
+
+D:\work_git2\project>git status -s
+ M README
+ M user1.txt
+
+D:\work_git2\project>git  reset 8f47c1e
+Unstaged changes after reset:
+M       README
+M       user1.txt
+
+D:\work_git2\project>git status -s
+ M README
+ M user1.txt
+
+D:\work_git2\project>
+
